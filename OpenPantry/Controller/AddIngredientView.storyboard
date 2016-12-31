@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Add Ingredient View Controller-->
+        <scene sceneID="hxv-yd-7Nk">
+            <objects>
+                <viewController storyboardIdentifier="AddIngredientViewController" id="629-I7-B7v" customClass="AddIngredientViewController" customModule="OpenPantry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UQA-Xx-Yqc"/>
+                        <viewControllerLayoutGuide type="bottom" id="1j2-cL-XA8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LiJ-Pa-xAg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN4-Mz-wcl">
+                                <rect key="frame" x="0.0" y="44" width="300" height="44"/>
+                                <color key="backgroundColor" red="0.0047087279819999998" green="0.31309869239999999" blue="0.70484775639999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="geX-rd-rsh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addIngredient:" destination="629-I7-B7v" eventType="touchUpInside" id="z86-FV-Ikt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please enter an ingredient" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AU3-zo-Y03">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="onx-PF-1JN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="629-I7-B7v" id="DYf-At-ELz"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AcI-Rf-oGi">
+                                <rect key="frame" x="0.0" y="88" width="600" height="512"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="629-I7-B7v" id="ESd-op-MyY"/>
+                                    <outlet property="delegate" destination="629-I7-B7v" id="ZFf-oi-tYy"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYE-bK-WSP">
+                                <rect key="frame" x="300" y="44" width="300" height="44"/>
+                                <color key="backgroundColor" red="0.84313725490000002" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fIW-1O-20p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="SEARCH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="performSearch:" destination="629-I7-B7v" eventType="touchUpInside" id="GB7-UX-nHc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fN4-Mz-wcl" firstAttribute="top" secondItem="AU3-zo-Y03" secondAttribute="bottom" id="4nI-eu-Biw"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="top" secondItem="fN4-Mz-wcl" secondAttribute="bottom" id="5kv-xT-6zW"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="top" secondItem="LiJ-Pa-xAg" secondAttribute="top" id="9DS-mr-aOO"/>
+                            <constraint firstAttribute="trailing" secondItem="tYE-bK-WSP" secondAttribute="trailing" id="CVh-Yg-hxB"/>
+                            <constraint firstItem="fN4-Mz-wcl" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="CVl-Oj-5pY"/>
+                            <constraint firstItem="fN4-Mz-wcl" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="G7F-5n-Nux"/>
+                            <constraint firstAttribute="trailing" secondItem="AcI-Rf-oGi" secondAttribute="trailing" id="HwW-hU-Eev"/>
+                            <constraint firstAttribute="trailing" secondItem="fN4-Mz-wcl" secondAttribute="trailing" id="Je8-20-bEm"/>
+                            <constraint firstAttribute="trailing" secondItem="fN4-Mz-wcl" secondAttribute="trailing" id="KVJ-qH-g4M"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="Koz-eE-mrI"/>
+                            <constraint firstItem="AU3-zo-Y03" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="LwN-KY-NPu"/>
+                            <constraint firstAttribute="trailing" secondItem="AU3-zo-Y03" secondAttribute="trailing" id="Qbk-Ac-Zar"/>
+                            <constraint firstItem="tYE-bK-WSP" firstAttribute="leading" secondItem="fN4-Mz-wcl" secondAttribute="trailing" id="RVr-Mz-VEw"/>
+                            <constraint firstAttribute="bottom" secondItem="AcI-Rf-oGi" secondAttribute="bottom" id="T94-8Q-cPa"/>
+                            <constraint firstItem="1j2-cL-XA8" firstAttribute="top" secondItem="fN4-Mz-wcl" secondAttribute="bottom" id="X0g-yZ-ouA"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="Xtq-5k-hK9"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="top" secondItem="fN4-Mz-wcl" secondAttribute="bottom" id="aoi-eM-pJb"/>
+                            <constraint firstItem="AU3-zo-Y03" firstAttribute="leading" secondItem="LiJ-Pa-xAg" secondAttribute="leading" id="c1t-DY-Cak"/>
+                            <constraint firstItem="AU3-zo-Y03" firstAttribute="top" secondItem="LiJ-Pa-xAg" secondAttribute="top" id="dza-vy-ITc"/>
+                            <constraint firstItem="tYE-bK-WSP" firstAttribute="top" secondItem="AU3-zo-Y03" secondAttribute="bottom" id="hSg-yP-4L3"/>
+                            <constraint firstItem="AU3-zo-Y03" firstAttribute="top" secondItem="AcI-Rf-oGi" secondAttribute="bottom" id="jJL-gA-Ecj"/>
+                            <constraint firstAttribute="trailing" secondItem="AcI-Rf-oGi" secondAttribute="trailing" id="ooE-9j-BUd"/>
+                            <constraint firstItem="AcI-Rf-oGi" firstAttribute="top" secondItem="tYE-bK-WSP" secondAttribute="bottom" id="t6C-j7-961"/>
+                            <constraint firstItem="tYE-bK-WSP" firstAttribute="width" secondItem="fN4-Mz-wcl" secondAttribute="width" id="tSu-ST-89V"/>
+                            <constraint firstAttribute="trailing" secondItem="AU3-zo-Y03" secondAttribute="trailing" id="zhb-Wm-z6L"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c1t-DY-Cak"/>
+                                <exclude reference="jJL-gA-Ecj"/>
+                                <exclude reference="zhb-Wm-z6L"/>
+                                <exclude reference="G7F-5n-Nux"/>
+                                <exclude reference="Je8-20-bEm"/>
+                                <exclude reference="KVJ-qH-g4M"/>
+                                <exclude reference="5kv-xT-6zW"/>
+                                <exclude reference="9DS-mr-aOO"/>
+                                <exclude reference="X0g-yZ-ouA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="fN4-Mz-wcl" id="7NF-Rw-gCx"/>
+                        <outlet property="ingredientTextField" destination="AU3-zo-Y03" id="UCa-O5-SEy"/>
+                        <outlet property="searchButton" destination="tYE-bK-WSP" id="3uN-i4-YTy"/>
+                        <outlet property="tableView" destination="AcI-Rf-oGi" id="6pf-6j-v7E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMj-NF-CB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490" y="112"/>
+        </scene>
+    </scenes>
+</document>

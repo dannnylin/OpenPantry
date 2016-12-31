@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="49e-iu-76X">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Oe2-fa-SzS" customClass="WebViewController" customModule="Season" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTu-AX-Cw5"/>
+                        <viewControllerLayoutGuide type="bottom" id="9jG-Oi-A9j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2sZ-2B-ms1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lve-gF-UVe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lve-gF-UVe" firstAttribute="top" secondItem="2sZ-2B-ms1" secondAttribute="top" id="5yB-Nq-Pgd"/>
+                            <constraint firstItem="Lve-gF-UVe" firstAttribute="top" secondItem="CTu-AX-Cw5" secondAttribute="bottom" id="LwK-Jz-ZX3"/>
+                            <constraint firstItem="Lve-gF-UVe" firstAttribute="leading" secondItem="2sZ-2B-ms1" secondAttribute="leading" id="Nih-O1-Rmi"/>
+                            <constraint firstItem="9jG-Oi-A9j" firstAttribute="top" secondItem="Lve-gF-UVe" secondAttribute="bottom" id="O1o-V8-O0u"/>
+                            <constraint firstItem="Lve-gF-UVe" firstAttribute="top" secondItem="CTu-AX-Cw5" secondAttribute="bottom" id="fxd-0i-FKm"/>
+                            <constraint firstAttribute="trailing" secondItem="Lve-gF-UVe" secondAttribute="trailing" id="wdM-8n-C2u"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LwK-Jz-ZX3"/>
+                                <exclude reference="fxd-0i-FKm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Lve-gF-UVe" id="60a-IG-1hE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAx-ZN-s86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-36"/>
+        </scene>
+    </scenes>
+</document>

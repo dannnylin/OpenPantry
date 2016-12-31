@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--HomeViewController-->
+        <scene sceneID="neM-un-9vp">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="N3T-fs-PLQ" customClass="HomeViewController" customModule="OpenPantry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mid-62-qe3"/>
+                        <viewControllerLayoutGuide type="bottom" id="82n-PQ-nba"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JPx-li-2Mg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N84-dO-sum">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="N3T-fs-PLQ" id="Jaf-7j-Cjo"/>
+                                    <outlet property="delegate" destination="N3T-fs-PLQ" id="OSJ-eF-xlm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N84-dO-sum" firstAttribute="top" secondItem="Mid-62-qe3" secondAttribute="bottom" id="09e-QE-zgs"/>
+                            <constraint firstAttribute="trailing" secondItem="N84-dO-sum" secondAttribute="trailing" id="HYG-Nm-V5F"/>
+                            <constraint firstItem="N84-dO-sum" firstAttribute="leading" secondItem="JPx-li-2Mg" secondAttribute="leading" id="cFI-Gv-HTW"/>
+                            <constraint firstItem="82n-PQ-nba" firstAttribute="top" secondItem="N84-dO-sum" secondAttribute="bottom" id="xOk-25-RZV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="N84-dO-sum" id="Zqq-IJ-tHq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsy-mp-DgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="145"/>
+        </scene>
+    </scenes>
+</document>
