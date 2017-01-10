@@ -96,28 +96,4 @@ class OpenPantryAPI: NSObject {
             completion(searchResults.recipes)
         }
     }
-    
-    class func geocodeHTTPRequest(restaurantAddress: String, onCompletion: (NSDictionary?, String?) -> Void) {
-        let session = NSURLSession.sharedSession()
-        let encodedRestaurantAddress = restaurantAddress.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        let url = NSString(format:"https://maps.googleapis.com/maps/api/geocode/json?address=%@&key=AIzaSyAxxpj7WBze8C0j0gQWWALKR--Zxoprdcs", encodedRestaurantAddress)
-        let urlPath : NSURL = NSURL(string: url as String)!
-        
-        let request = NSMutableURLRequest(URL: urlPath)
-        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.HTTPMethod = "GET"
-        let task = session.dataTaskWithRequest(request) { (data, response, error) in
-            if (error != nil) {
-                onCompletion(nil, error?.localizedDescription)
-            } else {
-                do {
-                    let jsonResult: NSDictionary! = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
-                    onCompletion(jsonResult, nil)
-                } catch {
-                    print("failed")
-                }
-            }
-        }
-        task.resume()        
-    }
 }
